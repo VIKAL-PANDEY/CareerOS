@@ -162,3 +162,4 @@ export interface AutomationFlow {
   lastTriggered?: string;
   webhookUrl?: string;
 }
+

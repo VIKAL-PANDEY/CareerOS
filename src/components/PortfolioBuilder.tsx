@@ -184,14 +184,14 @@ export const PortfolioBuilder: React.FC = () => {
             <div className="space-y-1">
               <label className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Custom Profile Slug</label>
               <div className="flex">
-                <span className="bg-slate-100 dark:bg-slate-950 border border-r-0 border-slate-100 dark:border-slate-850 px-3 py-2.5 rounded-l-xl text-xs text-slate-400">
+                <span className="bg-slate-100 dark:bg-slate-950 border border-r-0 border-slate-100 dark:border-slate-800 px-3 py-2.5 rounded-l-xl text-xs text-slate-400">
                   career.os/p/
                 </span>
                 <input
                   type="text"
                   value={profile.portfolioCustomSlug || ""}
                   onChange={(e) => handleUpdateSlug(e.target.value)}
-                  className="flex-1 bg-slate-50 dark:bg-slate-950/40 text-slate-800 dark:text-slate-100 text-xs px-3 py-2.5 border border-slate-100 dark:border-slate-850 rounded-r-xl focus:outline-none"
+                  className="flex-1 bg-slate-50 dark:bg-slate-950/40 text-slate-800 dark:text-slate-100 text-xs px-3 py-2.5 border border-slate-100 dark:border-slate-800 rounded-r-xl focus:outline-none"
                   placeholder="slug-name"
                 />
               </div>
@@ -222,7 +222,7 @@ export const PortfolioBuilder: React.FC = () => {
           <div className="pt-2">
             <button
               onClick={() => setShowPublicModal(true)}
-              className="glow-btn bg-slate-900 hover:bg-slate-850 dark:bg-indigo-600 dark:hover:bg-indigo-500 text-white text-xs font-semibold px-4.5 py-2.5 rounded-xl flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-sm"
+              className="glow-btn bg-slate-900 hover:bg-slate-800 dark:bg-indigo-600 dark:hover:bg-indigo-500 text-white text-xs font-semibold px-4.5 py-2.5 rounded-xl flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-sm"
             >
               <Eye className="w-4 h-4" /> Live Public Portfolio Website
             </button>
@@ -241,7 +241,7 @@ export const PortfolioBuilder: React.FC = () => {
             
             <button
               onClick={() => setAddingProject(!addingProject)}
-              className="p-1.5 rounded-lg border border-slate-100 dark:border-slate-850 hover:bg-slate-50 text-indigo-600 dark:text-indigo-400 cursor-pointer"
+              className="p-1.5 rounded-lg border border-slate-100 dark:border-slate-800 hover:bg-slate-50 text-indigo-600 dark:text-indigo-400 cursor-pointer"
             >
               <Plus className="w-4 h-4" />
             </button>
@@ -263,14 +263,14 @@ export const PortfolioBuilder: React.FC = () => {
                     placeholder="Project Title"
                     value={newProj.title}
                     onChange={(e) => setNewProj({ ...newProj, title: e.target.value })}
-                    className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-xs px-3 py-2 border border-slate-100 dark:border-slate-850 rounded-lg focus:outline-none"
+                    className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-xs px-3 py-2 border border-slate-100 dark:border-slate-800 rounded-lg focus:outline-none"
                   />
                   <input
                     type="text"
                     placeholder="Technologies (comma separated)"
                     value={newProj.technologies}
                     onChange={(e) => setNewProj({ ...newProj, technologies: e.target.value })}
-                    className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-xs px-3 py-2 border border-slate-100 dark:border-slate-850 rounded-lg focus:outline-none"
+                    className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-xs px-3 py-2 border border-slate-100 dark:border-slate-800 rounded-lg focus:outline-none"
                   />
                 </div>
                 <textarea
@@ -278,7 +278,7 @@ export const PortfolioBuilder: React.FC = () => {
                   placeholder="Short, crisp description of accomplishments..."
                   value={newProj.description}
                   onChange={(e) => setNewProj({ ...newProj, description: e.target.value })}
-                  className="w-full bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-xs p-3 border border-slate-100 dark:border-slate-850 rounded-lg focus:outline-none"
+                  className="w-full bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-xs p-3 border border-slate-100 dark:border-slate-800 rounded-lg focus:outline-none"
                   rows={3}
                 />
                 <div className="grid grid-cols-2 gap-3">
@@ -287,14 +287,14 @@ export const PortfolioBuilder: React.FC = () => {
                     placeholder="GitHub Repo URL (Optional)"
                     value={newProj.githubUrl}
                     onChange={(e) => setNewProj({ ...newProj, githubUrl: e.target.value })}
-                    className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-xs px-3 py-2 border border-slate-100 dark:border-slate-850 rounded-lg focus:outline-none"
+                    className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-xs px-3 py-2 border border-slate-100 dark:border-slate-800 rounded-lg focus:outline-none"
                   />
                   <input
                     type="url"
                     placeholder="Active Deployment URL (Optional)"
                     value={newProj.liveUrl}
                     onChange={(e) => setNewProj({ ...newProj, liveUrl: e.target.value })}
-                    className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-xs px-3 py-2 border border-slate-100 dark:border-slate-850 rounded-lg focus:outline-none"
+                    className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-xs px-3 py-2 border border-slate-100 dark:border-slate-800 rounded-lg focus:outline-none"
                   />
                 </div>
                 <div className="flex justify-end gap-2 pt-1">
@@ -307,7 +307,7 @@ export const PortfolioBuilder: React.FC = () => {
 
           <div className="space-y-3">
             {projects.map((proj) => (
-              <div key={proj.id} className="p-4 bg-slate-50 dark:bg-slate-950/20 border border-slate-100 dark:border-slate-850 rounded-xl flex items-start justify-between">
+              <div key={proj.id} className="p-4 bg-slate-50 dark:bg-slate-950/20 border border-slate-100 dark:border-slate-800 rounded-xl flex items-start justify-between">
                 <div className="space-y-1.5 max-w-[90%]">
                   <h4 className="text-xs font-bold text-slate-800 dark:text-slate-200">{proj.title}</h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">{proj.description}</p>
@@ -352,7 +352,7 @@ export const PortfolioBuilder: React.FC = () => {
             
             <button
               onClick={() => setAddingCert(!addingCert)}
-              className="p-1.5 rounded-lg border border-slate-100 dark:border-slate-850 hover:bg-slate-50 text-indigo-600 dark:text-indigo-400 cursor-pointer"
+              className="p-1.5 rounded-lg border border-slate-100 dark:border-slate-800 hover:bg-slate-50 text-indigo-600 dark:text-indigo-400 cursor-pointer"
             >
               <Plus className="w-4 h-4" />
             </button>
@@ -374,7 +374,7 @@ export const PortfolioBuilder: React.FC = () => {
                     placeholder="Credential Title"
                     value={newCert.title}
                     onChange={(e) => setNewCert({ ...newCert, title: e.target.value })}
-                    className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-xs px-3 py-2 border border-slate-100 dark:border-slate-850 rounded-lg focus:outline-none"
+                    className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-xs px-3 py-2 border border-slate-100 dark:border-slate-800 rounded-lg focus:outline-none"
                   />
                   <input
                     type="text"
@@ -382,7 +382,7 @@ export const PortfolioBuilder: React.FC = () => {
                     placeholder="Issuer Institution"
                     value={newCert.issuer}
                     onChange={(e) => setNewCert({ ...newCert, issuer: e.target.value })}
-                    className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-xs px-3 py-2 border border-slate-100 dark:border-slate-850 rounded-lg focus:outline-none"
+                    className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-xs px-3 py-2 border border-slate-100 dark:border-slate-800 rounded-lg focus:outline-none"
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-3">
@@ -390,14 +390,14 @@ export const PortfolioBuilder: React.FC = () => {
                     type="date"
                     value={newCert.date}
                     onChange={(e) => setNewCert({ ...newCert, date: e.target.value })}
-                    className="bg-white dark:bg-slate-900 text-slate-850 dark:text-slate-100 text-xs px-3 py-2 border border-slate-100 dark:border-slate-850 rounded-lg focus:outline-none"
+                    className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-xs px-3 py-2 border border-slate-100 dark:border-slate-800 rounded-lg focus:outline-none"
                   />
                   <input
                     type="url"
                     placeholder="Verification Link (Optional)"
                     value={newCert.verificationUrl}
                     onChange={(e) => setNewCert({ ...newCert, verificationUrl: e.target.value })}
-                    className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-xs px-3 py-2 border border-slate-100 dark:border-slate-850 rounded-lg focus:outline-none"
+                    className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-xs px-3 py-2 border border-slate-100 dark:border-slate-800 rounded-lg focus:outline-none"
                   />
                 </div>
                 <div className="flex justify-end gap-2 pt-1">
@@ -410,7 +410,7 @@ export const PortfolioBuilder: React.FC = () => {
 
           <div className="space-y-3">
             {certs.map((cert) => (
-              <div key={cert.id} className="p-3 bg-slate-50 dark:bg-slate-950/20 border border-slate-100 dark:border-slate-850 rounded-xl flex items-center justify-between">
+              <div key={cert.id} className="p-3 bg-slate-50 dark:bg-slate-950/20 border border-slate-100 dark:border-slate-800 rounded-xl flex items-center justify-between">
                 <div>
                   <h4 className="text-xs font-bold text-slate-800 dark:text-slate-200">{cert.title}</h4>
                   <p className="text-[10px] text-slate-400 font-semibold">{cert.issuer} — Issued {cert.date}</p>
@@ -463,7 +463,7 @@ export const PortfolioBuilder: React.FC = () => {
 
           {/* AI Auditor Feedback panel */}
           {report ? (
-            <div className="space-y-4 pt-2 border-t border-slate-100 dark:border-slate-850/60">
+            <div className="space-y-4 pt-2 border-t border-slate-100 dark:border-slate-800/60">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Overall Score</span>
                 <span className="text-2xl font-display font-bold text-indigo-600 dark:text-indigo-400">{report.score}%</span>
@@ -488,7 +488,7 @@ export const PortfolioBuilder: React.FC = () => {
               </div>
             </div>
           ) : (
-            <div className="p-4 bg-slate-50 dark:bg-slate-950/35 border border-slate-100 dark:border-slate-850 rounded-xl text-center text-xs text-slate-400">
+            <div className="p-4 bg-slate-50 dark:bg-slate-950/35 border border-slate-100 dark:border-slate-800 rounded-xl text-center text-xs text-slate-400">
               Awaiting portfolio analysis... Click "Audit Portfolio" to invoke Gemini.
             </div>
           )}
@@ -552,7 +552,7 @@ export const PortfolioBuilder: React.FC = () => {
                           <p className="text-xs text-slate-400 leading-relaxed">{proj.description}</p>
                           <div className="flex flex-wrap gap-1.5">
                             {proj.technologies.map((t, idx) => (
-                              <span key={idx} className="bg-slate-950 text-slate-400 text-[9px] font-semibold px-2 py-0.5 rounded border border-slate-850">
+                              <span key={idx} className="bg-slate-950 text-slate-400 text-[9px] font-semibold px-2 py-0.5 rounded border border-slate-800">
                                 {t}
                               </span>
                             ))}
@@ -598,3 +598,4 @@ export const PortfolioBuilder: React.FC = () => {
     </div>
   );
 };
+

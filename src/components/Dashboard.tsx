@@ -361,3 +361,4 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate, triggerRefresh
     </div>
   );
 };
+

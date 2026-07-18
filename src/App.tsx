@@ -260,7 +260,7 @@ function AppContent() {
                       placeholder="e.g. alex.rivera@university.edu"
                       value={loginEmail}
                       onChange={(e) => setLoginEmail(e.target.value)}
-                      className="w-full bg-slate-950 text-slate-100 placeholder-slate-500 text-xs px-3.5 py-2.5 border border-slate-850 rounded-xl focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                      className="w-full bg-slate-950 text-slate-100 placeholder-slate-500 text-xs px-3.5 py-2.5 border border-slate-800 rounded-xl focus:outline-none focus:ring-1 focus:ring-indigo-500"
                     />
                   </div>
 
@@ -308,7 +308,7 @@ function AppContent() {
                         required
                         value={onboardingForm.name}
                         onChange={(e) => setOnboardingForm({ ...onboardingForm, name: e.target.value })}
-                        className="w-full bg-slate-950 text-slate-100 placeholder-slate-500 text-xs px-3.5 py-2.5 border border-slate-850 rounded-xl focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                        className="w-full bg-slate-950 text-slate-100 placeholder-slate-500 text-xs px-3.5 py-2.5 border border-slate-800 rounded-xl focus:outline-none focus:ring-1 focus:ring-indigo-500"
                       />
                     </div>
 
@@ -319,7 +319,7 @@ function AppContent() {
                         required
                         value={onboardingForm.email}
                         onChange={(e) => setOnboardingForm({ ...onboardingForm, email: e.target.value })}
-                        className="w-full bg-slate-950 text-slate-100 placeholder-slate-500 text-xs px-3.5 py-2.5 border border-slate-850 rounded-xl focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                        className="w-full bg-slate-950 text-slate-100 placeholder-slate-500 text-xs px-3.5 py-2.5 border border-slate-800 rounded-xl focus:outline-none focus:ring-1 focus:ring-indigo-500"
                       />
                     </div>
                   </div>
@@ -330,7 +330,7 @@ function AppContent() {
                       <select
                         value={onboardingForm.targetJob}
                         onChange={(e) => setOnboardingForm({ ...onboardingForm, targetJob: e.target.value })}
-                        className="w-full bg-slate-950 text-slate-100 text-xs px-3.5 py-2.5 border border-slate-850 rounded-xl focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                        className="w-full bg-slate-950 text-slate-100 text-xs px-3.5 py-2.5 border border-slate-800 rounded-xl focus:outline-none focus:ring-1 focus:ring-indigo-500"
                       >
                         <option value="AI Engineer">AI Engineer</option>
                         <option value="Frontend Developer">Frontend Developer</option>
@@ -351,7 +351,7 @@ function AppContent() {
                         required
                         value={onboardingForm.gpa}
                         onChange={(e) => setOnboardingForm({ ...onboardingForm, gpa: e.target.value })}
-                        className="w-full bg-slate-950 text-slate-100 placeholder-slate-500 text-xs px-3.5 py-2.5 border border-slate-850 rounded-xl focus:outline-none"
+                        className="w-full bg-slate-950 text-slate-100 placeholder-slate-500 text-xs px-3.5 py-2.5 border border-slate-800 rounded-xl focus:outline-none"
                       />
                     </div>
                   </div>
@@ -364,7 +364,7 @@ function AppContent() {
                       required
                       value={onboardingForm.skills}
                       onChange={(e) => setOnboardingForm({ ...onboardingForm, skills: e.target.value })}
-                      className="w-full bg-slate-950 text-slate-100 placeholder-slate-500 text-xs px-3.5 py-2.5 border border-slate-850 rounded-xl focus:outline-none"
+                      className="w-full bg-slate-950 text-slate-100 placeholder-slate-500 text-xs px-3.5 py-2.5 border border-slate-800 rounded-xl focus:outline-none"
                     />
                   </div>
 
@@ -642,3 +642,4 @@ export default function App() {
     </ThemeProvider>
   );
 }
+

@@ -25,6 +25,7 @@ interface CareerGuidanceProps {
 export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) => {
   const [targetJob, setTargetJob] = useState("AI Engineer");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [roadmap, setRoadmap] = useState<CareerRoadmap | null>(null);
   const [skillGap, setSkillGap] = useState<SkillGapAnalysis | null>(null);
   const [recs, setRecs] = useState<ProjectRecommendation[]>([]);
@@ -47,20 +48,21 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
   const loadCurrentRoadmaps = async () => {
     try {
       setLoading(true);
+      setError(null);
       const profile = await api.getProfile();
-      if (profile.targetJob) {
-        setTargetJob(profile.targetJob);
-      }
+      const job = profile?.targetJob || "AI Engineer";
+      setTargetJob(job);
       
-      const roadmapData = await api.generateRoadmap(profile.targetJob || "AI Engineer");
-      const gapData = await api.analyzeSkillGap(profile.targetJob || "AI Engineer");
+      const roadmapData = await api.generateRoadmap(job);
+      const gapData = await api.analyzeSkillGap(job);
       const recsData = await api.recommendProjects();
 
       setRoadmap(roadmapData);
       setSkillGap(gapData);
       setRecs(recsData);
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
+      setError(e.message || "Failed to load career roadmaps. Please verify your connection or Gemini API key configuration.");
     } finally {
       setLoading(false);
     }
@@ -69,6 +71,7 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
   const handleGenerate = async (jobTitle: string) => {
     try {
       setLoading(true);
+      setError(null);
       setTargetJob(jobTitle);
       
       // Update profile
@@ -84,15 +87,43 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
       setRoadmap(roadmapData);
       setSkillGap(gapData);
       setRecs(recsData);
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
+      setError(e.message || "Failed to generate roadmaps. Please check your Gemini API key configuration.");
     } finally {
       setLoading(false);
     }
   };
 
+  const emptyStateBtn = (
+    <button
+      onClick={() => handleGenerate(targetJob)}
+      className="text-xs font-bold text-indigo-600 dark:text-indigo-400 border border-indigo-300 dark:border-indigo-800 px-4 py-2 rounded-xl hover:bg-indigo-50 dark:hover:bg-indigo-950/30 transition-all cursor-pointer"
+    >
+      Generate Now
+    </button>
+  );
+
   return (
     <div className="space-y-6">
+      {/* Error Alert Display */}
+      {error && (
+        <div className="flex items-start gap-3 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl text-red-400 text-xs">
+          <ShieldAlert className="w-5 h-5 shrink-0 mt-0.5 text-red-400" />
+          <div className="space-y-2">
+            <div>
+              <p className="font-bold">Career Guidance Error</p>
+              <p className="opacity-90">{error}</p>
+            </div>
+            <button
+              onClick={() => handleGenerate(targetJob)}
+              className="px-3 py-1.5 bg-red-500/20 hover:bg-red-500/30 border border-red-500/30 rounded-lg font-semibold transition-all cursor-pointer"
+            >
+              Retry Generation
+            </button>
+          </div>
+        </div>
+      )}
       {/* Search Input and Goal Selection */}
       <div className="bg-white dark:bg-slate-900/90 border border-slate-100 dark:border-slate-800/80 p-6 rounded-2xl shadow-sm space-y-4">
         <div>
@@ -108,7 +139,7 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
               value={targetJob}
               onChange={(e) => setTargetJob(e.target.value)}
               placeholder="e.g., Cloud Architect, Full Stack Developer..."
-              className="w-full bg-slate-50 dark:bg-slate-950/40 text-slate-800 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 text-xs pl-10 pr-4 py-3 border border-slate-100 dark:border-slate-850 rounded-xl focus:outline-none focus:ring-1 focus:ring-indigo-500"
+              className="w-full bg-slate-50 dark:bg-slate-950/40 text-slate-800 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 text-xs pl-10 pr-4 py-3 border border-slate-100 dark:border-slate-800 rounded-xl focus:outline-none focus:ring-1 focus:ring-indigo-500"
             />
           </div>
           <button
@@ -198,9 +229,10 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
           </div>
         ) : (
           <AnimatePresence mode="wait">
-            {/* Roadmap Tab */}
+            {/* ── Roadmap Tab ─────────────────────────────────────── */}
             {activeTab === 'roadmap' && roadmap && (
               <motion.div
+                key="roadmap-data"
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
@@ -220,7 +252,7 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
                           {idx + 1}
                         </span>
 
-                        <div className="space-y-3 p-4 bg-slate-50 dark:bg-slate-950/20 border border-slate-100 dark:border-slate-850 rounded-xl">
+                        <div className="space-y-3 p-4 bg-slate-50 dark:bg-slate-950/20 border border-slate-100 dark:border-slate-800 rounded-xl">
                           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 pb-2 border-b border-slate-100 dark:border-slate-800/50">
                             <h4 className="text-xs font-bold text-slate-800 dark:text-slate-200">{milestone.title}</h4>
                             <span className="bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 text-[9px] font-bold px-2 py-0.5 rounded uppercase tracking-wider self-start sm:self-auto">
@@ -268,7 +300,7 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
                     </h4>
                     <div className="flex flex-wrap gap-1.5">
                       {roadmap.requiredSkills.map((skill, sIdx) => (
-                        <span key={sIdx} className="bg-slate-50 dark:bg-slate-950 text-slate-700 dark:text-slate-300 text-[10px] font-semibold px-2.5 py-1 rounded border border-slate-100 dark:border-slate-850">
+                        <span key={sIdx} className="bg-slate-50 dark:bg-slate-950 text-slate-700 dark:text-slate-300 text-[10px] font-semibold px-2.5 py-1 rounded border border-slate-100 dark:border-slate-800">
                           {skill}
                         </span>
                       ))}
@@ -306,10 +338,21 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
                 </div>
               </motion.div>
             )}
+            {activeTab === 'roadmap' && !roadmap && (
+              <motion.div key="roadmap-empty" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col items-center justify-center p-16 text-center space-y-4 border border-dashed border-slate-200 dark:border-slate-800 rounded-2xl">
+                <MapPin className="w-10 h-10 text-slate-300 dark:text-slate-700" />
+                <div>
+                  <p className="font-display font-semibold text-slate-700 dark:text-slate-300">No Roadmap Generated Yet</p>
+                  <p className="text-xs text-slate-400 mt-1">Click <strong>Generate Roadmaps</strong> above to build your personalised 12-week career curriculum.</p>
+                </div>
+                {emptyStateBtn}
+              </motion.div>
+            )}
 
-            {/* Skill Gap Tab */}
+            {/* ── Skill Gap Tab ───────────────────────────────── */}
             {activeTab === 'skillgap' && skillGap && (
               <motion.div
+                key="skillgap-data"
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
@@ -409,10 +452,21 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
                 </div>
               </motion.div>
             )}
+            {activeTab === 'skillgap' && !skillGap && (
+              <motion.div key="skillgap-empty" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col items-center justify-center p-16 text-center space-y-4 border border-dashed border-slate-200 dark:border-slate-800 rounded-2xl">
+                <TrendingUp className="w-10 h-10 text-slate-300 dark:text-slate-700" />
+                <div>
+                  <p className="font-display font-semibold text-slate-700 dark:text-slate-300">No Skill Gap Analysis Yet</p>
+                  <p className="text-xs text-slate-400 mt-1">Generate a roadmap first to see your personalised skill gap audit.</p>
+                </div>
+                {emptyStateBtn}
+              </motion.div>
+            )}
 
-            {/* AI Projects Recommended Tab */}
-            {activeTab === 'recs' && recs && (
+            {/* ── AI Projects Tab ──────────────────────────────── */}
+            {activeTab === 'recs' && recs.length > 0 && (
               <motion.div
+                key="recs-data"
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
@@ -488,9 +542,20 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
                 </div>
               </motion.div>
             )}
+            {activeTab === 'recs' && recs.length === 0 && (
+              <motion.div key="recs-empty" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col items-center justify-center p-16 text-center space-y-4 border border-dashed border-slate-200 dark:border-slate-800 rounded-2xl">
+                <Briefcase className="w-10 h-10 text-slate-300 dark:text-slate-700" />
+                <div>
+                  <p className="font-display font-semibold text-slate-700 dark:text-slate-300">No Project Recommendations Yet</p>
+                  <p className="text-xs text-slate-400 mt-1">Generate a roadmap to unlock AI-tailored portfolio project ideas.</p>
+                </div>
+                {emptyStateBtn}
+              </motion.div>
+            )}
           </AnimatePresence>
         )}
       </div>
     </div>
   );
 };
+

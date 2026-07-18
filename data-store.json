@@ -441,7 +441,7 @@
         "role": "student",
         "onboarded": true,
         "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=256&auto=format&fit=crop",
-        "targetJob": "Cyber Security Engineer",
+        "targetJob": "AI Engineer",
         "skills": [
           "React",
           "TypeScript",
@@ -539,10 +539,10 @@
         "recruiterPerspective": "Alex shows high raw aptitude. To stand out for Tier-1 AI Engineering roles, Alex needs to bridge the gap between building toy local scripts and managing scalable cloud pipelines. Adding direct deployment links and system diagrams in their portfolio will double call-back rates."
       },
       "careerRoadmap": {
-        "goal": "Cyber Security Engineer",
+        "goal": "AI Engineer",
         "milestones": [
           {
-            "title": "Foundations of Cyber Security Engineer Architecture",
+            "title": "Foundations of AI Engineer Architecture",
             "duration": "Weeks 1 - 4",
             "topics": [
               "Advanced data structures",

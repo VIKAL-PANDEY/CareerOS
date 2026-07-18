@@ -172,7 +172,7 @@ export const ResumeBuilder: React.FC = () => {
                 value={resumeText}
                 onChange={(e) => setResumeText(e.target.value)}
                 rows={15}
-                className="w-full font-mono text-[11px] bg-slate-50 dark:bg-slate-950/40 text-slate-800 dark:text-slate-100 p-4 border border-slate-100 dark:border-slate-850 rounded-xl focus:outline-none focus:ring-1 focus:ring-indigo-500 leading-relaxed"
+                className="w-full font-mono text-[11px] bg-slate-50 dark:bg-slate-950/40 text-slate-800 dark:text-slate-100 p-4 border border-slate-100 dark:border-slate-800 rounded-xl focus:outline-none focus:ring-1 focus:ring-indigo-500 leading-relaxed"
                 placeholder="Paste your plain text resume here..."
               />
               <div className="flex items-center justify-between">
@@ -260,7 +260,7 @@ export const ResumeBuilder: React.FC = () => {
 
               <button
                 onClick={handleExportPDF}
-                className="w-full bg-slate-900 hover:bg-slate-850 dark:bg-indigo-600 dark:hover:bg-indigo-500 text-white text-xs font-semibold py-2.5 rounded-xl flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-sm"
+                className="w-full bg-slate-900 hover:bg-slate-800 dark:bg-indigo-600 dark:hover:bg-indigo-500 text-white text-xs font-semibold py-2.5 rounded-xl flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-sm"
               >
                 <Download className="w-3.5 h-3.5" /> Export PDF (ATS Optimized Layout)
               </button>
@@ -283,7 +283,7 @@ export const ResumeBuilder: React.FC = () => {
               value={rewriteInput}
               onChange={(e) => setRewriteInput(e.target.value)}
               placeholder="e.g. built a python scraper to fetch some jobs"
-              className="w-full bg-slate-50 dark:bg-slate-950/40 text-slate-800 dark:text-slate-100 text-xs px-3.5 py-2.5 border border-slate-100 dark:border-slate-850 rounded-xl focus:outline-none"
+              className="w-full bg-slate-50 dark:bg-slate-950/40 text-slate-800 dark:text-slate-100 text-xs px-3.5 py-2.5 border border-slate-100 dark:border-slate-800 rounded-xl focus:outline-none"
             />
             <button
               onClick={handleAiRewrite}
@@ -379,3 +379,4 @@ export const ResumeBuilder: React.FC = () => {
     </div>
   );
 };
+

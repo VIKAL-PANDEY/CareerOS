@@ -290,3 +290,4 @@ export const OpportunityHub: React.FC = () => {
     </div>
   );
 };
+

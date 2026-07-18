@@ -135,7 +135,7 @@ export const InterviewPrep: React.FC = () => {
             <div className="space-y-6">
               {/* Active Question Box */}
               {questions.length > 0 && (
-                <div className="p-5 bg-slate-50 dark:bg-slate-950/30 border border-slate-100 dark:border-slate-850 rounded-2xl space-y-3">
+                <div className="p-5 bg-slate-50 dark:bg-slate-950/30 border border-slate-100 dark:border-slate-800 rounded-2xl space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="text-[9px] uppercase font-bold tracking-wider text-indigo-600 dark:text-indigo-400">
                       Question {currentIndex + 1} of {questions.length} — {questions[currentIndex].type}
@@ -159,7 +159,7 @@ export const InterviewPrep: React.FC = () => {
                     onChange={(e) => setUserAnswer(e.target.value)}
                     rows={6}
                     placeholder="Enter your response here or click the microphone to simulate continuous speech input..."
-                    className="w-full text-xs bg-slate-50 dark:bg-slate-950/40 text-slate-800 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 p-4 border border-slate-100 dark:border-slate-850 rounded-xl focus:outline-none focus:ring-1 focus:ring-indigo-500 leading-relaxed"
+                    className="w-full text-xs bg-slate-50 dark:bg-slate-950/40 text-slate-800 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 p-4 border border-slate-100 dark:border-slate-800 rounded-xl focus:outline-none focus:ring-1 focus:ring-indigo-500 leading-relaxed"
                   />
                   
                   {isRecording && (
@@ -176,7 +176,7 @@ export const InterviewPrep: React.FC = () => {
                     className={`p-3 rounded-xl border flex items-center justify-center gap-1.5 transition-all cursor-pointer text-xs font-semibold ${
                       isRecording 
                         ? "bg-red-500 border-red-500 text-white animate-bounce shadow-md" 
-                        : "bg-slate-50 dark:bg-slate-950 border-slate-100 dark:border-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-100"
+                        : "bg-slate-50 dark:bg-slate-950 border-slate-100 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100"
                     }`}
                   >
                     {isRecording ? (
@@ -214,9 +214,9 @@ export const InterviewPrep: React.FC = () => {
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="p-6 bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-850 rounded-2xl space-y-4"
+                    className="p-6 bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 rounded-2xl space-y-4"
                   >
-                    <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-850/60">
+                    <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800/60">
                       <div className="space-y-0.5">
                         <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">AI Recruiter Score</span>
                         <h4 className="text-xs font-bold text-slate-800 dark:text-slate-200">Critique & Improvement Areas</h4>
@@ -246,7 +246,7 @@ export const InterviewPrep: React.FC = () => {
 
                     <button
                       onClick={handleNextQuestion}
-                      className="w-full bg-slate-900 hover:bg-slate-850 dark:bg-indigo-600 dark:hover:bg-indigo-500 text-white text-xs font-semibold py-2.5 rounded-xl flex items-center justify-center gap-1.5 transition-all cursor-pointer"
+                      className="w-full bg-slate-900 hover:bg-slate-800 dark:bg-indigo-600 dark:hover:bg-indigo-500 text-white text-xs font-semibold py-2.5 rounded-xl flex items-center justify-center gap-1.5 transition-all cursor-pointer"
                     >
                       Next Question <ArrowRight className="w-3.5 h-3.5" />
                     </button>
@@ -269,7 +269,7 @@ export const InterviewPrep: React.FC = () => {
 
           <div className="space-y-2.5">
             {completedSessions.length === 0 ? (
-              <div className="p-4 bg-slate-50 dark:bg-slate-950/30 border border-slate-100 dark:border-slate-850 rounded-xl text-center text-[11px] text-slate-400">
+              <div className="p-4 bg-slate-50 dark:bg-slate-950/30 border border-slate-100 dark:border-slate-800 rounded-xl text-center text-[11px] text-slate-400">
                 Awaiting first question response...
               </div>
             ) : (
@@ -320,3 +320,4 @@ export const InterviewPrep: React.FC = () => {
     </div>
   );
 };
+

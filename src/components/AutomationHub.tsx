@@ -824,3 +824,4 @@ export const AutomationHub: React.FC<AutomationHubProps> = ({ onWorkflowComplete
     </div>
   );
 };
+
