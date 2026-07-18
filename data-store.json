@@ -1,0 +1,851 @@
+{
+  "users": {
+    "alex.rivera@university.edu": {
+      "profile": {
+        "id": "stud_1784366887315",
+        "name": "Alex Rivera",
+        "email": "alex.rivera@university.edu",
+        "role": "student",
+        "onboarded": true,
+        "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=256&auto=format&fit=crop",
+        "targetJob": "AI Engineer",
+        "skills": [
+          "React",
+          "TypeScript",
+          "Python",
+          "PyTorch",
+          "SQL"
+        ],
+        "githubUrl": "https://github.com/alexrivera",
+        "linkedinUrl": "https://linkedin.com/in/alexrivera",
+        "portfolioUrl": "alexrivera.career.os",
+        "resumeText": "ALEX RIVERA\nEmail: alexrivera@gmail.com | Phone: +1-555-0199\nGitHub: github.com/alexrivera | LinkedIn: linkedin.com/in/alexrivera\n\nSUMMARY\nMotivated engineering student passionate about building AI-driven solutions and robust web applications. Proficient in React, Python, and TypeScript. Looking for a Summer 2026 AI/Software Engineering internship.\n\nEDUCATION\nB.S. in Computer Science | State University (Expected Grad: May 2027)\nGPA: 3.82/4.00\n\nPROJECTS\n- AI Flashcards Generator: Built a web tool using Node.js and OpenAI API that converts notes into flashcards. Saved users 5+ study hours weekly.\n- DevConnect: Created a developer community platform using React and Supabase. Features real-time messaging and project sharing.\n\nSKILLS\nProgramming: Python, JavaScript, TypeScript, SQL, HTML/CSS\nFrameworks: React, Node.js, Express, Tailwind CSS\nTools: Git, VS Code, Postman, Supabase",
+        "resumeFileName": "Alex_Rivera_Resume.pdf",
+        "atsScore": 68,
+        "employabilityScore": 72,
+        "portfolioTheme": "slate",
+        "portfolioDarkMode": true,
+        "portfolioCustomSlug": "alex-rivera-ai-eng",
+        "assignedMentorId": "mentor_01",
+        "gpa": 3.85
+      },
+      "projects": [
+        {
+          "id": "proj_1",
+          "title": "AI Flashcard Generator",
+          "description": "A full-stack web application that leverages LLMs to generate high-yield study flashcards from uploaded PDFs or raw text notes.",
+          "technologies": [
+            "React",
+            "Node.js",
+            "Express",
+            "Tailwind CSS"
+          ],
+          "githubUrl": "https://github.com/alexrivera/ai-flashcards",
+          "liveUrl": "https://ai-flashcards.demo",
+          "recruiterReview": "Good layout. High commercial potential. Consider adding an offline caching system to increase speed."
+        },
+        {
+          "id": "proj_2",
+          "title": "DevConnect Developer Forum",
+          "description": "A beautiful, real-time developer community platform with interactive profiles, upvoting, tag filtering, and markdown posts.",
+          "technologies": [
+            "React",
+            "TypeScript",
+            "Tailwind CSS"
+          ],
+          "githubUrl": "https://github.com/alexrivera/dev-connect",
+          "liveUrl": "https://devconnect.demo",
+          "recruiterReview": "Strong React structure. Responsive on mobile. Code could benefit from typescript strict null checks."
+        }
+      ],
+      "certificates": [
+        {
+          "id": "cert_1",
+          "title": "Deep Learning Specialization",
+          "issuer": "DeepLearning.AI (Coursera)",
+          "date": "2025-11-12",
+          "verificationUrl": "https://coursera.org/verify/dl-specialization"
+        },
+        {
+          "id": "cert_2",
+          "title": "React Web Developer Professional Certificate",
+          "issuer": "Meta (Coursera)",
+          "date": "2025-05-30",
+          "verificationUrl": "https://coursera.org/verify/react-meta"
+        }
+      ],
+      "employabilityReport": {
+        "score": 72,
+        "strengths": [
+          "Solid core in modern front-end frameworks (React, TypeScript).",
+          "Practical experience building AI-adjacent toolings (Flashcards project).",
+          "Excellent GPA and academic pedigree in Computer Science."
+        ],
+        "weaknesses": [
+          "Lack of production-grade Cloud architecture (AWS, Docker, CI/CD).",
+          "No specialized deep learning frameworks implemented in main projects (TensorFlow, PyTorch).",
+          "No internships recorded on resume to show industrial collaboration."
+        ],
+        "improvementAreas": [
+          {
+            "item": "Deploy a project using Docker & Cloud infrastructure",
+            "priority": "High",
+            "action": "Containerize the AI Flashcard Generator, set up CI/CD GitHub action, and deploy to AWS or GCP."
+          },
+          {
+            "item": "Implement PyTorch / PyTorch-Lightning script",
+            "priority": "Medium",
+            "action": "Add a mini Jupyter notebook repo implementing a transformer from scratch to demonstrate deeper AI fundamentals."
+          },
+          {
+            "item": "ATS Keywords refinement",
+            "priority": "High",
+            "action": "Add cloud terms (Docker, REST APIs, CI/CD) and state management libraries (Redux, Zustand) to resume."
+          }
+        ],
+        "recruiterPerspective": "Alex shows high raw aptitude. To stand out for Tier-1 AI Engineering roles, Alex needs to bridge the gap between building toy local scripts and managing scalable cloud pipelines. Adding direct deployment links and system diagrams in their portfolio will double call-back rates."
+      },
+      "careerRoadmap": {
+        "goal": "AI Engineer",
+        "milestones": [
+          {
+            "title": "Foundations of AI Engineer Architecture",
+            "duration": "Weeks 1 - 4",
+            "topics": [
+              "Advanced data structures",
+              "API system designs",
+              "Relational schema management",
+              "Asynchronous runtimes"
+            ],
+            "suggestedProjects": [
+              "Modular high-concurrency API service",
+              "Custom cache store middleware"
+            ]
+          },
+          {
+            "title": "Production Infrastructure & Scaling",
+            "duration": "Weeks 5 - 8",
+            "topics": [
+              "Docker & Kubernetes setups",
+              "Global state caching (Redis)",
+              "Secure JSON web token auth architecture"
+            ],
+            "suggestedProjects": [
+              "Microservices container orchestration",
+              "Full OAuth authentication proxy system"
+            ]
+          },
+          {
+            "title": "Production CI/CD & Testing Suite",
+            "duration": "Weeks 9 - 12",
+            "topics": [
+              "Unit testing with Jest/PyTest",
+              "Continuous integration pipelines",
+              "Cloud performance monitoring"
+            ],
+            "suggestedProjects": [
+              "Fully automated deployment pipeline with system telemetry metrics dashboard"
+            ]
+          }
+        ],
+        "requiredSkills": [
+          "TypeScript",
+          "Docker",
+          "REST APIs",
+          "System Architecture",
+          "PostgreSQL"
+        ],
+        "certifications": [
+          "Google Cloud Associate Engineer",
+          "Certified Kubernetes Administrator"
+        ],
+        "interviewPrepFocus": [
+          "Algorithm design patterns (DP, Graph structures)",
+          "Scalability constraints",
+          "Live coding challenges"
+        ]
+      },
+      "skillGapAnalysis": {
+        "missingSkills": [
+          "PyTorch",
+          "Docker",
+          "Vector DB (Pinecone)",
+          "FastAPI",
+          "GCP Core"
+        ],
+        "weakSkills": [
+          "SQL Database Optimization",
+          "Advanced TypeScript"
+        ],
+        "prerequisites": [
+          "Data Structures & Algorithms",
+          "Python Object Oriented Foundations"
+        ],
+        "industryTrends": [
+          "Multi-Agent Architectures",
+          "Low-Latency Embeddings",
+          "Retrieval-Augmented Generation"
+        ],
+        "learningPriority": [
+          {
+            "skill": "PyTorch Deep Learning Core",
+            "priority": "Immediate",
+            "resource": "Fast.ai Practical Deep Learning for Coders"
+          },
+          {
+            "skill": "Docker Containerization",
+            "priority": "Immediate",
+            "resource": "Docker Core Crash Course"
+          },
+          {
+            "skill": "Vector Database setup (Chroma/Pinecone)",
+            "priority": "Soon",
+            "resource": "Pinecone Engineering University"
+          }
+        ]
+      },
+      "mockOpportunities": [
+        {
+          "id": "opp_1",
+          "title": "Generative AI Engineering Intern",
+          "company": "Scale AI",
+          "type": "internship",
+          "location": "San Francisco, CA (Hybrid)",
+          "deadline": "2026-09-15",
+          "matchScore": 89,
+          "bestMatchReason": "Your experience with React frontend + Gemini API integration perfectly aligns with their internal tooling unit requests.",
+          "applicationTips": [
+            "Highlight your AI Flashcard project in detail.",
+            "Emphasize your 3.82 CS GPA.",
+            "Explain your experience managing large context sizes."
+          ]
+        },
+        {
+          "id": "opp_2",
+          "title": "Junior Software Engineer (Cloud Core)",
+          "company": "HashiCorp",
+          "type": "job",
+          "location": "Remote (USA)",
+          "deadline": "2026-08-30",
+          "matchScore": 74,
+          "bestMatchReason": "Matches your React and TypeScript engineering stack, though they prefer stronger knowledge of Docker and infrastructure-as-code.",
+          "applicationTips": [
+            "Draw emphasis to your DevConnect forum platform backend setup.",
+            "Review fundamental Terraform concepts before applying."
+          ]
+        },
+        {
+          "id": "opp_3",
+          "title": "Global Generative AI Hackathon 2026",
+          "company": "Google Cloud",
+          "type": "hackathon",
+          "location": "Online",
+          "deadline": "2026-08-10",
+          "matchScore": 95,
+          "bestMatchReason": "An ideal arena to build out your recommended GCP-deployed FastAPI agent. High focus on Gemini model integrations.",
+          "applicationTips": [
+            "Form a team with a strong python backend engineer.",
+            "Utilize Gemini-3.5-flash for lightning fast conversational latency."
+          ]
+        },
+        {
+          "id": "opp_4",
+          "title": "AI Pioneers Scholarship 2026",
+          "company": "NVIDIA Foundation",
+          "type": "scholarship",
+          "location": "Global",
+          "deadline": "2026-10-01",
+          "matchScore": 85,
+          "bestMatchReason": "Honors high-achieving Computer Science juniors demonstrating practical projects in deep learning or cognitive applications.",
+          "applicationTips": [
+            "Submit a stellar portfolio link via CareerOS.",
+            "Attach academic recommendation letters emphasizing CS GPA."
+          ]
+        }
+      ],
+      "mentorChatHistory": [
+        {
+          "id": "msg_1",
+          "sender": "system",
+          "text": "Welcome to CareerOS AI Mentor. I have reviewed your portfolio, resume, and career goals. Let me know how I can guide you today!",
+          "timestamp": "00:30"
+        }
+      ],
+      "automations": [
+        {
+          "id": "auto_1",
+          "name": "New Internship Opportunity Pipeline",
+          "trigger": "New internship matches target profile score > 80%",
+          "isTriggered": true,
+          "steps": [
+            {
+              "name": "Scrape Opportunity & Rank",
+              "service": "System",
+              "status": "completed",
+              "logs": [
+                "[3:00:12 pm] Starting step [1/6]: Scrape Opportunity & Rank...",
+                "[3:00:13 pm] Successfully integrated ViaSocket node with System. Action complete."
+              ]
+            },
+            {
+              "name": "Send Rich Gmail Summary",
+              "service": "Gmail",
+              "status": "completed",
+              "logs": [
+                "[3:00:14 pm] Starting step [2/6]: Send Rich Gmail Summary...",
+                "[3:00:15 pm] Sent summary email via ViaSocket SMTP server to vpand301@gmail.com. Server status: 250 OK"
+              ]
+            },
+            {
+              "name": "Create Google Calendar deadline task",
+              "service": "Google Calendar",
+              "status": "completed",
+              "logs": [
+                "[3:00:16 pm] Starting step [3/6]: Create Google Calendar deadline task...",
+                "[3:00:17 pm] Created calendar node invite payload: 'CareerOS Sync - New Internship Opportunity Pipeline'. Success."
+              ]
+            },
+            {
+              "name": "Generate custom application workspace inside Notion",
+              "service": "Notion",
+              "status": "completed",
+              "logs": [
+                "[3:00:18 pm] Starting step [4/6]: Generate custom application workspace inside Notion...",
+                "[3:00:19 pm] Appended relational database row to student board workspace. Notion-ID: workspace_not_9021"
+              ]
+            },
+            {
+              "name": "Ping student WhatsApp with priority badge",
+              "service": "WhatsApp",
+              "status": "completed",
+              "logs": [
+                "[3:00:19 pm] Starting step [5/6]: Ping student WhatsApp with priority badge...",
+                "[3:00:21 pm] Dispatched WhatsApp webhook notification to WhatsApp API node. Status: DELIVERED"
+              ]
+            },
+            {
+              "name": "Update active tracker in Google Sheets",
+              "service": "Google Sheets",
+              "status": "completed",
+              "logs": [
+                "[3:00:21 pm] Starting step [6/6]: Update active tracker in Google Sheets...",
+                "[3:00:22 pm] Appended metrics table values directly via sheets oauth-api proxy. Row #12 updated."
+              ]
+            }
+          ],
+          "lastTriggered": "18/7/2026, 3:00:12 pm"
+        },
+        {
+          "id": "auto_2",
+          "name": "Resume Update Re-Evaluation Pipeline",
+          "trigger": "Resume file or skills updated inside portfolio builder",
+          "isTriggered": false,
+          "steps": [
+            {
+              "name": "Run OCR & ATS parsing engine",
+              "service": "System",
+              "status": "pending",
+              "logs": []
+            },
+            {
+              "name": "Call Gemini AI to update Employability Score",
+              "service": "System",
+              "status": "pending",
+              "logs": []
+            },
+            {
+              "name": "Ping active mentor on Slack with PDF & Score change",
+              "service": "Slack",
+              "status": "pending",
+              "logs": []
+            },
+            {
+              "name": "Draft highly-engaging LinkedIn update post using Gemini",
+              "service": "System",
+              "status": "pending",
+              "logs": []
+            }
+          ]
+        },
+        {
+          "id": "auto_3",
+          "name": "GitHub Repository Auto-Sync Pipeline",
+          "trigger": "New GitHub repository added or pinned in portfolio",
+          "isTriggered": false,
+          "steps": [
+            {
+              "name": "Fetch repository details & code tree",
+              "service": "System",
+              "status": "pending",
+              "logs": []
+            },
+            {
+              "name": "Generate interactive project summary cards",
+              "service": "System",
+              "status": "pending",
+              "logs": []
+            },
+            {
+              "name": "Update public Portfolio website",
+              "service": "System",
+              "status": "pending",
+              "logs": []
+            },
+            {
+              "name": "Dispatch email update to shortlisted recruiters",
+              "service": "Gmail",
+              "status": "pending",
+              "logs": []
+            }
+          ]
+        },
+        {
+          "id": "auto_4",
+          "name": "Interview Scheduling & Mock Prep Pipeline",
+          "trigger": "Interview task marked 'Scheduled' in opportunity hub",
+          "isTriggered": false,
+          "steps": [
+            {
+              "name": "Add interview details to Google Calendar",
+              "service": "Google Calendar",
+              "status": "pending",
+              "logs": []
+            },
+            {
+              "name": "Generate customized preparation checklist & target terms",
+              "service": "System",
+              "status": "pending",
+              "logs": []
+            },
+            {
+              "name": "Deploy dynamic mock interview simulation module",
+              "service": "System",
+              "status": "pending",
+              "logs": []
+            },
+            {
+              "name": "Send reminder SMS with checklist link",
+              "service": "WhatsApp",
+              "status": "pending",
+              "logs": []
+            }
+          ]
+        }
+      ]
+    },
+    "vpand301@gmail.com": {
+      "profile": {
+        "id": "stud_1784366945291",
+        "name": "VIKAL PANDEY",
+        "email": "vpand301@gmail.com",
+        "role": "student",
+        "onboarded": true,
+        "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=256&auto=format&fit=crop",
+        "targetJob": "Cyber Security Engineer",
+        "skills": [
+          "React",
+          "TypeScript",
+          "Python",
+          "PyTorch",
+          "SQL"
+        ],
+        "githubUrl": "https://github.com/alexrivera",
+        "linkedinUrl": "https://linkedin.com/in/alexrivera",
+        "portfolioUrl": "alexrivera.career.os",
+        "resumeText": "ALEX RIVERA\nEmail: alexrivera@gmail.com | Phone: +1-555-0199\nGitHub: github.com/alexrivera | LinkedIn: linkedin.com/in/alexrivera\n\nSUMMARY\nMotivated engineering student passionate about building AI-driven solutions and robust web applications. Proficient in React, Python, and TypeScript. Looking for a Summer 2026 AI/Software Engineering internship.\n\nEDUCATION\nB.S. in Computer Science | State University (Expected Grad: May 2027)\nGPA: 3.82/4.00\n\nPROJECTS\n- AI Flashcards Generator: Built a web tool using Node.js and OpenAI API that converts notes into flashcards. Saved users 5+ study hours weekly.\n- DevConnect: Created a developer community platform using React and Supabase. Features real-time messaging and project sharing.\n\nSKILLS\nProgramming: Python, JavaScript, TypeScript, SQL, HTML/CSS\nFrameworks: React, Node.js, Express, Tailwind CSS\nTools: Git, VS Code, Postman, Supabase",
+        "resumeFileName": "Alex_Rivera_Resume.pdf",
+        "atsScore": 68,
+        "employabilityScore": 72,
+        "portfolioTheme": "slate",
+        "portfolioDarkMode": true,
+        "portfolioCustomSlug": "alex-rivera-ai-eng",
+        "assignedMentorId": "mentor_01",
+        "gpa": 4
+      },
+      "projects": [
+        {
+          "id": "proj_1",
+          "title": "AI Flashcard Generator",
+          "description": "A full-stack web application that leverages LLMs to generate high-yield study flashcards from uploaded PDFs or raw text notes.",
+          "technologies": [
+            "React",
+            "Node.js",
+            "Express",
+            "Tailwind CSS"
+          ],
+          "githubUrl": "https://github.com/alexrivera/ai-flashcards",
+          "liveUrl": "https://ai-flashcards.demo",
+          "recruiterReview": "Good layout. High commercial potential. Consider adding an offline caching system to increase speed."
+        },
+        {
+          "id": "proj_2",
+          "title": "DevConnect Developer Forum",
+          "description": "A beautiful, real-time developer community platform with interactive profiles, upvoting, tag filtering, and markdown posts.",
+          "technologies": [
+            "React",
+            "TypeScript",
+            "Tailwind CSS"
+          ],
+          "githubUrl": "https://github.com/alexrivera/dev-connect",
+          "liveUrl": "https://devconnect.demo",
+          "recruiterReview": "Strong React structure. Responsive on mobile. Code could benefit from typescript strict null checks."
+        }
+      ],
+      "certificates": [
+        {
+          "id": "cert_1",
+          "title": "Deep Learning Specialization",
+          "issuer": "DeepLearning.AI (Coursera)",
+          "date": "2025-11-12",
+          "verificationUrl": "https://coursera.org/verify/dl-specialization"
+        },
+        {
+          "id": "cert_2",
+          "title": "React Web Developer Professional Certificate",
+          "issuer": "Meta (Coursera)",
+          "date": "2025-05-30",
+          "verificationUrl": "https://coursera.org/verify/react-meta"
+        }
+      ],
+      "employabilityReport": {
+        "score": 72,
+        "strengths": [
+          "Solid core in modern front-end frameworks (React, TypeScript).",
+          "Practical experience building AI-adjacent toolings (Flashcards project).",
+          "Excellent GPA and academic pedigree in Computer Science."
+        ],
+        "weaknesses": [
+          "Lack of production-grade Cloud architecture (AWS, Docker, CI/CD).",
+          "No specialized deep learning frameworks implemented in main projects (TensorFlow, PyTorch).",
+          "No internships recorded on resume to show industrial collaboration."
+        ],
+        "improvementAreas": [
+          {
+            "item": "Deploy a project using Docker & Cloud infrastructure",
+            "priority": "High",
+            "action": "Containerize the AI Flashcard Generator, set up CI/CD GitHub action, and deploy to AWS or GCP."
+          },
+          {
+            "item": "Implement PyTorch / PyTorch-Lightning script",
+            "priority": "Medium",
+            "action": "Add a mini Jupyter notebook repo implementing a transformer from scratch to demonstrate deeper AI fundamentals."
+          },
+          {
+            "item": "ATS Keywords refinement",
+            "priority": "High",
+            "action": "Add cloud terms (Docker, REST APIs, CI/CD) and state management libraries (Redux, Zustand) to resume."
+          }
+        ],
+        "recruiterPerspective": "Alex shows high raw aptitude. To stand out for Tier-1 AI Engineering roles, Alex needs to bridge the gap between building toy local scripts and managing scalable cloud pipelines. Adding direct deployment links and system diagrams in their portfolio will double call-back rates."
+      },
+      "careerRoadmap": {
+        "goal": "Cyber Security Engineer",
+        "milestones": [
+          {
+            "title": "Foundations of Cyber Security Engineer Architecture",
+            "duration": "Weeks 1 - 4",
+            "topics": [
+              "Advanced data structures",
+              "API system designs",
+              "Relational schema management",
+              "Asynchronous runtimes"
+            ],
+            "suggestedProjects": [
+              "Modular high-concurrency API service",
+              "Custom cache store middleware"
+            ]
+          },
+          {
+            "title": "Production Infrastructure & Scaling",
+            "duration": "Weeks 5 - 8",
+            "topics": [
+              "Docker & Kubernetes setups",
+              "Global state caching (Redis)",
+              "Secure JSON web token auth architecture"
+            ],
+            "suggestedProjects": [
+              "Microservices container orchestration",
+              "Full OAuth authentication proxy system"
+            ]
+          },
+          {
+            "title": "Production CI/CD & Testing Suite",
+            "duration": "Weeks 9 - 12",
+            "topics": [
+              "Unit testing with Jest/PyTest",
+              "Continuous integration pipelines",
+              "Cloud performance monitoring"
+            ],
+            "suggestedProjects": [
+              "Fully automated deployment pipeline with system telemetry metrics dashboard"
+            ]
+          }
+        ],
+        "requiredSkills": [
+          "TypeScript",
+          "Docker",
+          "REST APIs",
+          "System Architecture",
+          "PostgreSQL"
+        ],
+        "certifications": [
+          "Google Cloud Associate Engineer",
+          "Certified Kubernetes Administrator"
+        ],
+        "interviewPrepFocus": [
+          "Algorithm design patterns (DP, Graph structures)",
+          "Scalability constraints",
+          "Live coding challenges"
+        ]
+      },
+      "skillGapAnalysis": {
+        "missingSkills": [
+          "PyTorch",
+          "Docker",
+          "Vector DB (Pinecone)",
+          "FastAPI",
+          "GCP Core"
+        ],
+        "weakSkills": [
+          "SQL Database Optimization",
+          "Advanced TypeScript"
+        ],
+        "prerequisites": [
+          "Data Structures & Algorithms",
+          "Python Object Oriented Foundations"
+        ],
+        "industryTrends": [
+          "Multi-Agent Architectures",
+          "Low-Latency Embeddings",
+          "Retrieval-Augmented Generation"
+        ],
+        "learningPriority": [
+          {
+            "skill": "PyTorch Deep Learning Core",
+            "priority": "Immediate",
+            "resource": "Fast.ai Practical Deep Learning for Coders"
+          },
+          {
+            "skill": "Docker Containerization",
+            "priority": "Immediate",
+            "resource": "Docker Core Crash Course"
+          },
+          {
+            "skill": "Vector Database setup (Chroma/Pinecone)",
+            "priority": "Soon",
+            "resource": "Pinecone Engineering University"
+          }
+        ]
+      },
+      "mockOpportunities": [
+        {
+          "id": "opp_1",
+          "title": "Generative AI Engineering Intern",
+          "company": "Scale AI",
+          "type": "internship",
+          "location": "San Francisco, CA (Hybrid)",
+          "deadline": "2026-09-15",
+          "matchScore": 89,
+          "bestMatchReason": "Your experience with React frontend + Gemini API integration perfectly aligns with their internal tooling unit requests.",
+          "applicationTips": [
+            "Highlight your AI Flashcard project in detail.",
+            "Emphasize your 3.82 CS GPA.",
+            "Explain your experience managing large context sizes."
+          ]
+        },
+        {
+          "id": "opp_2",
+          "title": "Junior Software Engineer (Cloud Core)",
+          "company": "HashiCorp",
+          "type": "job",
+          "location": "Remote (USA)",
+          "deadline": "2026-08-30",
+          "matchScore": 74,
+          "bestMatchReason": "Matches your React and TypeScript engineering stack, though they prefer stronger knowledge of Docker and infrastructure-as-code.",
+          "applicationTips": [
+            "Draw emphasis to your DevConnect forum platform backend setup.",
+            "Review fundamental Terraform concepts before applying."
+          ]
+        },
+        {
+          "id": "opp_3",
+          "title": "Global Generative AI Hackathon 2026",
+          "company": "Google Cloud",
+          "type": "hackathon",
+          "location": "Online",
+          "deadline": "2026-08-10",
+          "matchScore": 95,
+          "bestMatchReason": "An ideal arena to build out your recommended GCP-deployed FastAPI agent. High focus on Gemini model integrations.",
+          "applicationTips": [
+            "Form a team with a strong python backend engineer.",
+            "Utilize Gemini-3.5-flash for lightning fast conversational latency."
+          ]
+        },
+        {
+          "id": "opp_4",
+          "title": "AI Pioneers Scholarship 2026",
+          "company": "NVIDIA Foundation",
+          "type": "scholarship",
+          "location": "Global",
+          "deadline": "2026-10-01",
+          "matchScore": 85,
+          "bestMatchReason": "Honors high-achieving Computer Science juniors demonstrating practical projects in deep learning or cognitive applications.",
+          "applicationTips": [
+            "Submit a stellar portfolio link via CareerOS.",
+            "Attach academic recommendation letters emphasizing CS GPA."
+          ]
+        }
+      ],
+      "mentorChatHistory": [
+        {
+          "id": "msg_1",
+          "sender": "system",
+          "text": "Welcome to CareerOS AI Mentor. I have reviewed your portfolio, resume, and career goals. Let me know how I can guide you today!",
+          "timestamp": "00:30"
+        }
+      ],
+      "automations": [
+        {
+          "id": "auto_1",
+          "name": "New Internship Opportunity Pipeline",
+          "trigger": "New internship matches target profile score > 80%",
+          "isTriggered": false,
+          "steps": [
+            {
+              "name": "Scrape Opportunity & Rank",
+              "service": "System",
+              "status": "pending",
+              "logs": []
+            },
+            {
+              "name": "Send Rich Gmail Summary",
+              "service": "Gmail",
+              "status": "pending",
+              "logs": []
+            },
+            {
+              "name": "Create Google Calendar deadline task",
+              "service": "Google Calendar",
+              "status": "pending",
+              "logs": []
+            },
+            {
+              "name": "Generate custom application workspace inside Notion",
+              "service": "Notion",
+              "status": "pending",
+              "logs": []
+            },
+            {
+              "name": "Ping student WhatsApp with priority badge",
+              "service": "WhatsApp",
+              "status": "pending",
+              "logs": []
+            },
+            {
+              "name": "Update active tracker in Google Sheets",
+              "service": "Google Sheets",
+              "status": "pending",
+              "logs": []
+            }
+          ]
+        },
+        {
+          "id": "auto_2",
+          "name": "Resume Update Re-Evaluation Pipeline",
+          "trigger": "Resume file or skills updated inside portfolio builder",
+          "isTriggered": false,
+          "steps": [
+            {
+              "name": "Run OCR & ATS parsing engine",
+              "service": "System",
+              "status": "pending",
+              "logs": []
+            },
+            {
+              "name": "Call Gemini AI to update Employability Score",
+              "service": "System",
+              "status": "pending",
+              "logs": []
+            },
+            {
+              "name": "Ping active mentor on Slack with PDF & Score change",
+              "service": "Slack",
+              "status": "pending",
+              "logs": []
+            },
+            {
+              "name": "Draft highly-engaging LinkedIn update post using Gemini",
+              "service": "System",
+              "status": "pending",
+              "logs": []
+            }
+          ]
+        },
+        {
+          "id": "auto_3",
+          "name": "GitHub Repository Auto-Sync Pipeline",
+          "trigger": "New GitHub repository added or pinned in portfolio",
+          "isTriggered": false,
+          "steps": [
+            {
+              "name": "Fetch repository details & code tree",
+              "service": "System",
+              "status": "pending",
+              "logs": []
+            },
+            {
+              "name": "Generate interactive project summary cards",
+              "service": "System",
+              "status": "pending",
+              "logs": []
+            },
+            {
+              "name": "Update public Portfolio website",
+              "service": "System",
+              "status": "pending",
+              "logs": []
+            },
+            {
+              "name": "Dispatch email update to shortlisted recruiters",
+              "service": "Gmail",
+              "status": "pending",
+              "logs": []
+            }
+          ]
+        },
+        {
+          "id": "auto_4",
+          "name": "Interview Scheduling & Mock Prep Pipeline",
+          "trigger": "Interview task marked 'Scheduled' in opportunity hub",
+          "isTriggered": false,
+          "steps": [
+            {
+              "name": "Add interview details to Google Calendar",
+              "service": "Google Calendar",
+              "status": "pending",
+              "logs": []
+            },
+            {
+              "name": "Generate customized preparation checklist & target terms",
+              "service": "System",
+              "status": "pending",
+              "logs": []
+            },
+            {
+              "name": "Deploy dynamic mock interview simulation module",
+              "service": "System",
+              "status": "pending",
+              "logs": []
+            },
+            {
+              "name": "Send reminder SMS with checklist link",
+              "service": "WhatsApp",
+              "status": "pending",
+              "logs": []
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

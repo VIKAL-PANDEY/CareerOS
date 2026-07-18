@@ -1,0 +1,6 @@
+{
+  "name": "CareerOS AI",
+  "description": "Your AI Career Operating System. A startup-grade SaaS platform helping students become industry-ready through AI employability scoring, roadmaps, resume builders, portfolio reviewers, mock interviews, and automated workflows.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
