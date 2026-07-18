@@ -230,7 +230,7 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
         ) : (
           <AnimatePresence mode="wait">
             {/* ── Roadmap Tab ─────────────────────────────────────── */}
-            {activeTab === 'roadmap' && roadmap && (
+            {activeTab === 'roadmap' && roadmap && roadmap.milestones && (
               <motion.div
                 key="roadmap-data"
                 initial={{ opacity: 0, y: 5 }}
@@ -246,7 +246,7 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
                   </div>
 
                   <div className="relative pl-6 space-y-8 before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-0.5 before:bg-slate-100 dark:before:bg-slate-800">
-                    {roadmap.milestones.map((milestone, idx) => (
+                    {roadmap.milestones?.map((milestone, idx) => (
                       <div key={idx} className="relative">
                         <span className="absolute left-[-21px] flex items-center justify-center w-6 h-6 rounded-full bg-indigo-600 text-white border border-indigo-600 text-[10px] font-bold z-10">
                           {idx + 1}
@@ -265,7 +265,7 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
                             <div className="space-y-1.5">
                               <h5 className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Topics to master</h5>
                               <ul className="space-y-1">
-                                {milestone.topics.map((topic, tIdx) => (
+                                {milestone.topics?.map((topic, tIdx) => (
                                   <li key={tIdx} className="text-[11px] text-slate-600 dark:text-slate-300 flex items-center gap-1.5">
                                     <ChevronRight className="w-3 h-3 text-indigo-400 shrink-0" /> {topic}
                                   </li>
@@ -277,7 +277,7 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
                             <div className="space-y-1.5">
                               <h5 className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Milestone Project</h5>
                               <ul className="space-y-1">
-                                {milestone.suggestedProjects.map((proj, pIdx) => (
+                                {milestone.suggestedProjects?.map((proj, pIdx) => (
                                   <li key={pIdx} className="text-[11px] text-slate-600 dark:text-slate-300 flex items-center gap-1.5">
                                     <FileCode className="w-3.5 h-3.5 text-emerald-500 shrink-0" /> {proj}
                                   </li>
@@ -299,7 +299,7 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
                       <Target className="w-4 h-4 text-indigo-500" /> Must-Have Skillsets
                     </h4>
                     <div className="flex flex-wrap gap-1.5">
-                      {roadmap.requiredSkills.map((skill, sIdx) => (
+                      {roadmap.requiredSkills?.map((skill, sIdx) => (
                         <span key={sIdx} className="bg-slate-50 dark:bg-slate-950 text-slate-700 dark:text-slate-300 text-[10px] font-semibold px-2.5 py-1 rounded border border-slate-100 dark:border-slate-800">
                           {skill}
                         </span>
@@ -313,7 +313,7 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
                       <Award className="w-4 h-4 text-indigo-500" /> Key Certifications
                     </h4>
                     <div className="space-y-2.5">
-                      {roadmap.certifications.map((cert, cIdx) => (
+                      {roadmap.certifications?.map((cert, cIdx) => (
                         <div key={cIdx} className="flex items-center gap-2.5">
                           <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full" />
                           <span className="text-[11px] text-slate-700 dark:text-slate-300 font-medium leading-tight">{cert}</span>
@@ -328,7 +328,7 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
                       <BookOpen className="w-4 h-4 text-indigo-500" /> Recruiter Interview focus
                     </h4>
                     <div className="space-y-2 text-slate-600 dark:text-slate-400 text-[11px] leading-relaxed">
-                      {roadmap.interviewPrepFocus.map((focus, fIdx) => (
+                      {roadmap.interviewPrepFocus?.map((focus, fIdx) => (
                         <div key={fIdx} className="p-2 bg-indigo-50/10 dark:bg-indigo-950/10 border border-indigo-500/5 rounded-lg">
                           {focus}
                         </div>
@@ -338,7 +338,7 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
                 </div>
               </motion.div>
             )}
-            {activeTab === 'roadmap' && !roadmap && (
+            {activeTab === 'roadmap' && (!roadmap || !roadmap.milestones || roadmap.milestones.length === 0) && (
               <motion.div key="roadmap-empty" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col items-center justify-center p-16 text-center space-y-4 border border-dashed border-slate-200 dark:border-slate-800 rounded-2xl">
                 <MapPin className="w-10 h-10 text-slate-300 dark:text-slate-700" />
                 <div>
@@ -350,7 +350,7 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
             )}
 
             {/* ── Skill Gap Tab ───────────────────────────────── */}
-            {activeTab === 'skillgap' && skillGap && (
+            {activeTab === 'skillgap' && skillGap && skillGap.missingSkills && (
               <motion.div
                 key="skillgap-data"
                 initial={{ opacity: 0, y: 5 }}
@@ -373,7 +373,7 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
                       </h4>
                       <p className="text-[10px] text-slate-400">Technologies or tools required that were not found in your portfolio profile:</p>
                       <div className="flex flex-wrap gap-1.5 pt-1">
-                        {skillGap.missingSkills.map((s, idx) => (
+                        {skillGap.missingSkills?.map((s, idx) => (
                           <span key={idx} className="bg-red-50 dark:bg-red-950/20 text-red-700 dark:text-red-400 text-[10px] font-semibold px-2 py-0.5 rounded border border-red-100 dark:border-red-900/30">
                             {s}
                           </span>
@@ -388,7 +388,7 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
                       </h4>
                       <p className="text-[10px] text-slate-400">Skills you list, but require more production proofing (e.g. advanced features):</p>
                       <div className="flex flex-wrap gap-1.5 pt-1">
-                        {skillGap.weakSkills.map((s, idx) => (
+                        {skillGap.weakSkills?.map((s, idx) => (
                           <span key={idx} className="bg-amber-50 dark:bg-amber-950/20 text-amber-700 dark:text-amber-400 text-[10px] font-semibold px-2 py-0.5 rounded border border-amber-100 dark:border-amber-900/30">
                             {s}
                           </span>
@@ -402,7 +402,7 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
                     <div className="space-y-3">
                       <h4 className="text-xs font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider">Core Prerequisites</h4>
                       <ul className="space-y-2">
-                        {skillGap.prerequisites.map((p, idx) => (
+                        {skillGap.prerequisites?.map((p, idx) => (
                           <li key={idx} className="text-xs text-slate-600 dark:text-slate-400 flex items-center gap-2">
                             <span className="w-1.5 h-1.5 bg-slate-400 rounded-full" /> {p}
                           </li>
@@ -413,7 +413,7 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
                     <div className="space-y-3">
                       <h4 className="text-xs font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider">Modern Industry Trends</h4>
                       <ul className="space-y-2">
-                        {skillGap.industryTrends.map((t, idx) => (
+                        {skillGap.industryTrends?.map((t, idx) => (
                           <li key={idx} className="text-xs text-slate-600 dark:text-slate-400 flex items-center gap-2">
                             <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-ping shrink-0" /> {t}
                           </li>
@@ -429,7 +429,7 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
                   <p className="text-xs text-slate-400">Gemini's recommended strategy focus order:</p>
 
                   <div className="space-y-3">
-                    {skillGap.learningPriority.map((priority, idx) => (
+                    {skillGap.learningPriority?.map((priority, idx) => (
                       <div key={idx} className="p-3 bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-900 rounded-xl space-y-1.5">
                         <div className="flex items-center justify-between">
                           <span className="text-xs font-bold text-slate-800 dark:text-slate-200">{priority.skill}</span>
@@ -452,7 +452,7 @@ export const CareerGuidance: React.FC<CareerGuidanceProps> = ({ onAddProject }) 
                 </div>
               </motion.div>
             )}
-            {activeTab === 'skillgap' && !skillGap && (
+            {activeTab === 'skillgap' && (!skillGap || !skillGap.missingSkills || skillGap.missingSkills.length === 0) && (
               <motion.div key="skillgap-empty" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col items-center justify-center p-16 text-center space-y-4 border border-dashed border-slate-200 dark:border-slate-800 rounded-2xl">
                 <TrendingUp className="w-10 h-10 text-slate-300 dark:text-slate-700" />
                 <div>
