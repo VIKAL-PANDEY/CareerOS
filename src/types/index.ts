@@ -160,4 +160,5 @@ export interface AutomationFlow {
   steps: AutomationStep[];
   isTriggered: boolean;
   lastTriggered?: string;
+  webhookUrl?: string;
 }

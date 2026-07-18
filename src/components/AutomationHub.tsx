@@ -227,7 +227,7 @@ interface WebhookConfigProps {
 
 const WebhookConfig: React.FC<WebhookConfigProps> = ({ flow, onSaved }) => {
   const [open, setOpen] = useState(false);
-  const [url, setUrl] = useState((flow as any).webhookUrl || "");
+  const [url, setUrl] = useState(flow.webhookUrl || "");
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -261,9 +261,9 @@ const WebhookConfig: React.FC<WebhookConfigProps> = ({ flow, onSaved }) => {
         className="flex items-center gap-1.5 text-[10px] font-semibold text-slate-400 hover:text-indigo-400 cursor-pointer transition-colors"
       >
         <Link2 className="w-3 h-3" />
-        {(flow as any).webhookUrl ? "Webhook URL configured" : "Configure Webhook URL"}
+        {flow.webhookUrl ? "Webhook URL configured" : "Configure Webhook URL"}
         {open ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
-        {(flow as any).webhookUrl && <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 ml-0.5" />}
+        {flow.webhookUrl && <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 ml-0.5" />}
       </button>
 
       <AnimatePresence>
@@ -353,10 +353,10 @@ export const AutomationHub: React.FC<AutomationHubProps> = ({ onWorkflowComplete
 
   const handleWebhookSaved = (flowId: string, webhookUrl: string) => {
     setFlows(prev => prev.map(f =>
-      f.id === flowId ? { ...f, webhookUrl } as any : f
+      f.id === flowId ? { ...f, webhookUrl } : f
     ));
     if (selectedFlow?.id === flowId) {
-      setSelectedFlow(prev => prev ? { ...prev, webhookUrl } as any : prev);
+      setSelectedFlow(prev => prev ? { ...prev, webhookUrl } : prev);
     }
   };
 
@@ -408,7 +408,7 @@ export const AutomationHub: React.FC<AutomationHubProps> = ({ onWorkflowComplete
     const flow = flows.find(f => f.id === flowId);
     if (!flow) return;
 
-    const webhookUrl = (flow as any).webhookUrl as string | undefined;
+    const webhookUrl = flow.webhookUrl;
 
     // If a webhook URL is configured → fire real ViaSocket trigger first
     if (webhookUrl) {
@@ -416,7 +416,7 @@ export const AutomationHub: React.FC<AutomationHubProps> = ({ onWorkflowComplete
       setTriggerResult("");
       try {
         const payload = getFlowMockPayload(flow.name);
-        const res = await api.triggerViaSocket(flowId, webhookUrl, payload as any);
+        const res = await api.triggerViaSocket(flowId, webhookUrl, payload);
         if (res.success) {
           setTriggerMode("done");
           setTriggerResult(`✓ ViaSocket received payload (HTTP ${res.status}). Your connected apps are now executing this automation.`);
@@ -551,7 +551,7 @@ export const AutomationHub: React.FC<AutomationHubProps> = ({ onWorkflowComplete
                 <div className="space-y-3">
                   {flows.map((flow) => {
                     const isSelected = selectedFlow?.id === flow.id;
-                    const hasWebhook = !!(flow as any).webhookUrl;
+                    const hasWebhook = !!flow.webhookUrl;
                     return (
                       <div
                         key={flow.id}
@@ -625,7 +625,7 @@ export const AutomationHub: React.FC<AutomationHubProps> = ({ onWorkflowComplete
                     <div className="space-y-1">
                       <h3 className="text-lg font-display font-bold text-slate-900 dark:text-white">{selectedFlow.name}</h3>
                       <p className="text-xs text-indigo-600 dark:text-indigo-400">
-                        {(selectedFlow as any).webhookUrl
+                        {selectedFlow.webhookUrl
                           ? "⚡ Real ViaSocket webhook configured — will fire on trigger"
                           : "Simulation mode — add a webhook URL to enable real ViaSocket triggers"}
                       </p>
@@ -755,7 +755,7 @@ export const AutomationHub: React.FC<AutomationHubProps> = ({ onWorkflowComplete
                       <div className="flex items-center gap-2">
                         <FileCode className="w-4 h-4 text-indigo-500" />
                         <span className="text-xs font-semibold text-slate-800 dark:text-slate-200">ViaSocket Webhook Payload</span>
-                        {(selectedFlow as any).webhookUrl && (
+                        {selectedFlow.webhookUrl && (
                           <span className="text-[9px] font-bold text-emerald-500 bg-emerald-500/10 px-1.5 py-0.5 rounded-full border border-emerald-500/20">LIVE</span>
                         )}
                       </div>
